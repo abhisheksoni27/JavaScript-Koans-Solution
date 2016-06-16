@@ -145,6 +145,7 @@ describe("About Applying What We Have Learnt", function() {
             return _.max(primesDivisible)
         }
 
+expect(calculatePrimes(100)).toBe(5);
 
     });
 
@@ -172,7 +173,8 @@ describe("About Applying What We Have Learnt", function() {
 
     it("should find the smallest number divisible by each of the numbers 1 to 20", function() {
 
-        var i = 43914474;
+        function LCM(){
+            var i =1;
 
         while (i % 2 != 0 || i % 3 != 0 || i % 4 != 0 || i % 5 != 0 ||
             i % 6 != 0 || i % 7 != 0 || i % 8 != 0 || i % 9 != 0 ||
@@ -181,6 +183,10 @@ describe("About Applying What We Have Learnt", function() {
             i % 18 != 0 || i % 19 != 0 || i % 20 != 0) {
             i++;
         }
+        return i;
+        }
+
+        expect(LCM()).toBe(232792560);
 
     });
 
