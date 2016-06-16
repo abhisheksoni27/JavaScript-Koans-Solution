@@ -225,6 +225,7 @@ expect(calculatePrimes(100)).toBe(5);
             }
             return "Done!"
         }
+
         var date = new Date();
         var primes = [];
         var n = 2;
@@ -236,5 +237,7 @@ expect(calculatePrimes(100)).toBe(5);
         }
 
     });
+
+    expect(primes[highest]).toBe(7927);
 
 });
