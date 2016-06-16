@@ -113,6 +113,39 @@ describe("About Applying What We Have Learnt", function() {
     it("should find the largest prime factor of a composite number", function() {
 
 
+        function calculatePrimes(number) {
+            var highest = number;
+
+            function check(i, n, highest) {
+                if (!(n <= Math.abs(Math.sqrt(i)) && i % n === 0)) {
+                    n = n + 1
+                    if (n > highest) {
+                        primes.push(i);
+                        return;
+                    }
+                    check(i, n, highest);
+                }
+                return "Done!"
+            }
+            var date = new Date();
+            var primes = [];
+            var n = 2;
+            for (i = 2; i <= number; i++) {
+                if (primes.length > highest) {
+                    break;
+                }
+                check(i, n, highest);
+            }
+            return calculateFactor(number, primes);
+        }
+
+        function calculateFactor(number, primes) {
+            var primesDivisible = primes.filter(function(prime) {
+                return number % prime === 0 });
+            return _.max(primesDivisible)
+        }
+
+
     });
 
     it("should find the largest palindrome made from the product of two 3 digit numbers", function() {
